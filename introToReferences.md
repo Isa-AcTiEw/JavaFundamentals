@@ -130,3 +130,31 @@ What can be concluded from this example
 
 Explanation: When we assign a reference variable to another reference variable we see that what is being passed is the value of the object that is being referenced hence changing refernce A will not affect reference b as they are two different variables in heap memory
 
+Example 2: Updating the referenced object variable through a method 
+
+
+``` Java
+public class Rectangle{
+    int length;
+    int breadth;
+    Rectangle(){} // non - parameterized constructor 
+    // parameterized constructor
+    Rectangle(int l, int b){
+        this.length = l;
+        this.b = b;
+    }
+    int calculateArea(){
+        return length * breadth;
+    }
+
+   
+}
+
+public class Main{
+    static void main(String[] args){
+         // create a new method that assigns new length and breadth
+         calculateNewArea(int L, int B){}
+    }
+}
+```
+
