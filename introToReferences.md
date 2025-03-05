@@ -168,4 +168,42 @@ public class Main{
 - At first the reference variable A is intialised to point to a reference object of Rectangle(20,70) hence the first output is ``` Area is 200 ```
 - However when we pass the reference variable A to the method a copy of the reference variable is created an assigned to B (temp var), both A and B point to same object so when B.length and B.breadth is assigned to a new breadth and length.
   - We can observe that A reference variable object will now have a length of 18 and a breadth of 15
-  - Resulting in two different outputs for calulateArea method 
+  - Resulting in two different outputs for calulateArea method
+ 
+
+
+
+Example 3 : Pass an Array into a method 
+``` Java
+
+import java.io.*;
+class Demo {
+	int arrayUpdate(int[] formalArray)
+	{
+		formalArray[2] = 99;
+		formalArray[4] = 77;
+		return 0;
+	}
+}
+class Main {
+	public static void main(String[] args)
+	{
+		Demo d1 = new Demo();
+		int[] actualArray = { 1, 2, 3, 4, 5 };
+
+		for (int items : actualArray)
+			System.out.print(items
+							+ " , "); // printing array
+
+		System.out.println();
+		d1.arrayUpdate(actualArray);
+		System.out.println();
+
+		for (int items : actualArray)
+			System.out.print(items
+							+ " , "); // printing array
+	}
+}
+```
+
+
