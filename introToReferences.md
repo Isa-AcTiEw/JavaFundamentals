@@ -153,7 +153,15 @@ public class Rectangle{
 public class Main{
     static void main(String[] args){
          // create a new method that assigns new length and breadth
-         calculateNewArea(int L, int B){}
+         changeDim(Rectangle B){
+             B.length = 18
+             B.breadth = 5
+         }
+         Rectangle A = new Rectangle(20,70)
+         System.out.println("Area is " + area);
+         int area = A.calculateArea()
+         changeDim(A);
+         System.out.println("Area is " + area);
     }
 }
 ```
