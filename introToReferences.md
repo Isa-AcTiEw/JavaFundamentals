@@ -123,5 +123,10 @@ public class Main{
         Rectangle rect2 = new Rectangle(6,3);
         System.out.println("Rectangle 2 length is " + rect2.length + " and bredath is " + rect2.breadth);
 }
+```
 
+What can be concluded from this example
+- We see that when rect1 is reassigned to a new object rect2 atill references the rectangle object that has length 20 and breadth 10 hence the output for both print atatements are the same
+
+Explanation: When we assign a reference variable to another reference variable we see that what is being passed is the value of the object that is being referenced hence changing refernce A will not affect reference b as they are two different variables in heap memory
 
