@@ -92,4 +92,36 @@ Picotorial Representation
 ### How does the assignment operator work here 🤔
 - First associativity is from left to right, so since when passing an object being referenced by a referenced variable is a pass by value. rectangle1 will now be assigned the object (referenced to)
   
-- It returns the object that is being referenced from rectangle and assign it to reference variable rectangle1 as well 
+- It returns the object that is being referenced from rectangle and assign it to reference variable rectangle1 as well
+
+
+### More examples demonstrating reference variables 
+
+Example 1: Reassigning a reference variable to a new object being referenced (chnaging reference variables)
+
+``` Java
+public class Rectangle{
+    int length;
+    int breadth;
+    Rectangle(){} // non - parameterized constructor 
+    // parameterized constructor
+    Rectangle(int l, int b){
+        this.length = l;
+        this.b = b;
+    }
+    int calculateArea(){
+        return length * breadth;
+    }
+}
+
+public class Main{
+    static void main(String[] args){
+        Rectangle rect1 = new Rectangle(20,10);
+        Rectangle rect2 = rect1;
+        System.out.println("Rectangle 2 length is " + rect2.length + " and bredath is " + rect2.breadth);
+        // reassignment of rect1 reference variable to another object
+        Rectangle rect2 = new Rectangle(6,3);
+        System.out.println("Rectangle 2 length is " + rect2.length + " and bredath is " + rect2.breadth);
+}
+
+
