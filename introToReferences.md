@@ -1,0 +1,95 @@
+# References 
+- In Object Oriented Programming we know that programmers are able to define their own data types and encapsulate certain buisness logics, properties or fields. These are known as classes 
+- We know that whenever we instantiate a class we create a new instance of that class this is known as an object 
+
+``` Java
+
+public class Rectangle{
+    int length;
+    int breadth;
+    Rectangle(){} // non - parameterized constructor 
+    // parameterized constructor
+    Rectangle(int l, int b){
+        this.length = l;
+        this.b = b;
+    }
+    int calculateArea(){
+        return length * breadth;
+    }
+}
+
+Shape rectangle = new Shape()
+```
+## What is actually happening here (with regards to how the memory is being ustilised)
+![heapAllocation](heapAllocation.jpeg)
+
+- In this image we see that a new memory address (location) is being assigned in the heap memory of the program to the newly created object
+
+## How do we access what is created in the heap memory (newly created object)
+- Remember in C++ we used a pointer variable (reference variable) that stores the memory address of the object in the stack or heap which is determined if we use dynamic or statically allocated memory 
+    - new keyword (heap dynamic mem alloc) or &varName (static , stack)
+
+- In Java that same thing applies but the reference variable is automatically created, memory management is not being exposed to the developer instead it is handled by the JVM (Java - Virtual - Machine)
+
+![referenceVar](reference.jpeg)
+
+> Tips to note on references ⚠️
+> Class, Interface, Objects, Array, Enums, Annotations, User-Defined types are of the reference type in Java
+> The default value for a reference variable is null
+> In order to access properties (methods) and fields associated with the reference variable the . dot operator is used
+
+Example 1: Accessing properties of the Shape Reference
+- Both the main class and Rectangle class are in the same package and hence need not be imported 
+``` Java
+// Shape class 
+public class Rectangle {
+    int length;
+    int breadth;
+    Shape(){} // non - parameterized constructor 
+    Rectangle(int l, int b){
+        this.length = l;
+        this.b = b;
+    }
+    int calculateArea(){
+        return length * breadth;
+    }
+}
+
+// Main Program 
+public class Main{
+    static void main(String[] args){
+        Rectangle rectangle = new Rectangle(20,10);
+        System.out.println("The height of the rectangle is: ", rectangle.calculateArea());
+    }
+}
+```
+
+Example 2: Creating two reference variables that references the same object
+
+```Java
+// given the shape class above 
+
+// Main program 
+public class Main{
+    static void main(String[] args){
+        Rectangle rectangle = new Rectangle(20,10);
+        Rectangle rectangle1 = rectangle
+    }
+}
+```
+
+Picotorial Representation 
+![pictureOfAssignment](objectAssignment.png)
+
+1. We see that when we assign a new reference object with the other reference object we are not assigning it that reference object instead the object it is pointing to
+
+2. We conclude that Java passes by value
+
+3. Since both the rectangle and rectangle1 reference variables references the same object. If the state of the object changes the references will be updated as well
+
+4. If we wanted to create a copy of the object (they are two seperate objects not pointing to the same thing in heap), we need to do a deep copy of the object
+
+### How does the assignment operator work here 🤔
+- First associativity is from left to right, so since when passing an object being referenced by a referenced variable is a pass by value. rectangle1 will now be assigned the object (referenced to)
+  
+- It returns the object that is being referenced from rectangle and assign it to reference variable rectangle1 as well 
