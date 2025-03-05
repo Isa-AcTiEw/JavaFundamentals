@@ -85,7 +85,7 @@ Picotorial Representation
 
 2. We conclude that Java passes by value
 
-3. Since both the rectangle and rectangle1 reference variables references the same object. If the state of the object changes the references will be updated as well
+3. Both rect1 and rect are completely seperate reference variables created outside the heap (stack) now they both point to the same reference object Rectangle(20,10), when the object state change it will be refelcted by both reference variables.
 
 4. If we wanted to create a copy of the object (they are two seperate objects not pointing to the same thing in heap), we need to do a deep copy of the object
 
@@ -165,4 +165,7 @@ public class Main{
     }
 }
 ```
-
+- At first the reference variable A is intialised to point to a reference object of Rectangle(20,70) hence the first output is ``` Area is 200 ```
+- However when we pass the reference variable A to the method a copy of the reference variable is created an assigned to B (temp var), both A and B point to same object so when B.length and B.breadth is assigned to a new breadth and length.
+  - We can observe that A reference variable object will now have a length of 18 and a breadth of 15
+  - Resulting in two different outputs for calulateArea method 
