@@ -205,5 +205,10 @@ class Main {
 	}
 }
 ```
+- we see that when we pass an array as a reference into the function we are able to update the elements of the array.
+  - For instance as seen from the updateArray function which updates the value of the first and second element to the int 99 and 77 respectively.
+
+Reason for this 
+- When we first initialised the array actualArray a reference to the memory location / addr of the first element of the array is created, similar to C and C++ we access the actual element of the array reference using the [] operator. Enabling us to mutate the values stored at the specific index 
 
 
