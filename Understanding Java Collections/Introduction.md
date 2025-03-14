@@ -259,7 +259,8 @@ for (int j = 0; j <names.size(); j++){
 # Map 
 - In java map replaces the Dictionary classes that can be seen in other programming languages like C# and Python, the map interface provides extensibility as it is implemented by other Map classes and its functionality can be extended 
   - For instance the HashMap iterator iterate over each entry in the HashMap in no particular method
-  - However i can have other classes like TreeMap that has a specific order to follow 5699659863
+  - However i can have other classes like TreeMap that returns an iterator based on a specific order 
+  - Map is a Key Value pair collection where each value is exactly map to no more than 1 key
 
 
 
