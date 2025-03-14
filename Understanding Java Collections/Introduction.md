@@ -256,3 +256,136 @@ for (int j = 0; j <names.size(); j++){
 
 ```
 
+# Map 
+- In java map replaces the Dictionary classes that can be seen in other programming languages like C# and Python, the map interface provides extensibility as it is implemented by other Map classes and its functionality can be extended 
+  - For instance the HashMap iterator iterate over each entry in the HashMap in no particular method
+  - However i can have other classes like TreeMap that has a specific order to follow 5699659863
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hashmap
+
+- A hashmap is a collection of key - value pair items, each key in a hashMap is unique and generated from a hashing algorithm hashCode of the value that is being stored 
+
+
+## Key details to take note for HashMap
+1. A hashMap cannot contain duplicate keys, hence if two objects have the same hash code (ie. Has the same hash with different values).
+    > A collision occurs, the more collisions in the hashMap the less efficient in terms of time complexity the adding or deleting of kvp in the hashMap (Loadfactor increases and the hashMap is not sparsely distributed)
+
+  - Hence the Hashmap in java resolves collision using seperate chaining, so if an object that is different and have a same value, a linked List is being initialised to append colliding objects at that hash bucket 
+
+2. Objects that are the same, (same objects or instances of the same object)
+   - the hashCode() method in the class will always generate the same hash for the object 
+   - Hence, they will always have the same hash value 
+
+3. Keys in hashMap must be primitive dataTypes and are immutable
+   - Given the characteristics of keys in HashMap mainly immutability and primitive dataTypes (numerical) this allows us to be sure that the hash values are constant throughout and one object produces exactly one hash value in which we are able to index it according to the hash generated. If hashes are mutable the consistency and accuracy of the hashTable is loss (degraded performance)
+- 
+   - If you are using an object as the key it must have a hashCode() that will hash the object based on the hashing algorithm, and equal to comapre if two objects are equal based on their hash value
+
+How is a Hashmap implemented in Java
+- Hashmap is a class that is implemented in the java.utils package, the hashMap class extends the Abstract Map class and implements the Map interface, clonable and serializable interface 
+
+  > Benefit: Allowing HashMap class to extend the functionalities of Abstract Map to suit the needs of the application (Open-Closed Principle)
+
+
+
+## Initialising of HashMap
+- To intialise the Hashmap the following syntax is used ` HashMap<K,V> hashMapName = new HashMap<K,V>();`
+- Besides instantiating with a default constructor there are three more methods that uses parameterized constructor to instantiate the HashMap with a specified capcitjy, specified capacity and load factor or from another Map<K,V>
+  - a) Specifying an intial cap `Hashmap<K,V> hashMapName = new HashMap<K,V>(int cap)`
+  - b) Specifying an initial capacity and load factor`HashMap<K,V> hashMapName = new HashMap<K,V>(int cap, int loadFactor);` 
+  - c) Initialising a HashMap from a Map `HashMap<K,V> hashMapName = new HashMap<K,V>(Map map)`
+
+
+Example of a program using HashMap
+``` Java 
+import java.util.HashMap;
+class Main{         
+  static void main(String[] args){
+    HashMap<Integer,String> contactList = new HashMap<Integer,String>();
+    contactList.put(913101,"Johnathan Tan");
+    contactList.put(941490,"Jacob Goh");
+    contactList.put(985104,"Kane Tan");
+    contactList.put(902501,"John Foo");
+    contactList.put(849101,"John Low");
+
+    // Iterating over each entry in the HashMap
+    for (Entry<Integer,String> entry: contactList.entrySet()){
+      System.out.println("This is the current key: " + entry.getKey() " and this is the current object: " + entry.getValue())
+    }
+
+    // printing the entire hashMap
+    System.out.println(contactList);
+
+    // priinting the value of a specific key e.g. 913101 in the hashMap
+    System.out.println(contactList.get(913101));
+
+    // remove a specified object in the HashMap at the corresponding key
+    contactList.remove(913101);
+
+    System.out.println(contactList);
+    
+    String name = contactList.get(913101);
+    // What will be the following output ? ans: NULL as the key and object has been removed 
+
+    // Scenario: Remove the contact of John Low, user keys in name only 
+
+    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+    System.out.println("Enter a name to remove from the contact List: ");
+    String contactName = myObj.nextLine();
+
+    // Use iterator to iterate over the Hash Map entries
+    for(Entry<Integer,String> entry: contactList.entrySet()){
+      if(entry.getValue == contactName){
+        Integer objKey = entry.getKey();
+        // delete the corresponding object in the set 
+        contactList.remove(objeKey);
+      }
+    }
+
+    // Print the hashMap again to verify sucessful deletion
+    for(Entry<Integer, String> entry: contactList.entrySet()){
+      System.out.println("This is the key: " + entry.getKey() + " this is the current object: " + entry.getValue());
+    }
+
+    // update the new contact number of the corresponding person 
+    System.out.println("Enter the name of the person in the contactList to update: ");
+    String newContactName = myObj.nextLine();
+    System.out.println("Enter the new contact no of the person to update: ");
+    Integer contactNum = myObj.nextLine();
+
+    for(Entry<Integer,String> entry: contactList.entrySet()){
+      if(entry.getValue() == newContactName){
+        // remove the current object and add a new one 
+        Integer remKey = entry.getKey();
+        contactList.remove(remKey);
+        contactList.add(contactNum,newContactName);
+      }
+    }
+
+  }
+}
+
+
+```
+
+Explanation of the methods used in Java Hashmap
+- add(Key,Value) , adds a new key value pair to the HashMap
+- remove(Key) removes an object at the corresponding key in the HashMap, return null if there is no corresponding object mapped to the key specified
+- remove(Key,Value) , remove the entry of the specified key only if it is mapped to the specified value 
+- replace(Key,newValue) : Replaces the key at the specified value only if the key specified is present else it will return null
+- entrySet() : Returns a reference to the Map objects as instances of Map.Entry<K,V> allowing us to immediately access the key or value of the current entry
+
+
