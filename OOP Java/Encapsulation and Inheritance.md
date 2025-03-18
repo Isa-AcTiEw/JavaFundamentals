@@ -267,4 +267,8 @@ class Car extends Vehicle{
 
 Expanding on OO design 
 - If we were to add a new buisness requirements in which i want to include vehicles with no engine (non conbustable engines) we would have to rewrite a huge portion of the code, as all vehicles must have an engine, what if a vehicle does not have ( electric car ).
-- Hence, a suggested approach would to be to make Engine an interface or abstract class which can then be implemented by the concrete classses of differenr engine types
+- Hence, a suggested approach would to be to make Engine an interface or abstract class which can then be implemented by the concrete classses of different engine types (Open closed principle)
+
+
+
+
