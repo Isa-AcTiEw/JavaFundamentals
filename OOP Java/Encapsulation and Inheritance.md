@@ -256,3 +256,10 @@ class Car extends Vehicle{
 
 
 ```
+- In this example we created the car and vehicle class, the vehicle class is a parent class (base class) in which the derrived class car inherits from, this means that it will have all the methods and properties of the vehicle class on top of its other methods
+- This relationship is known as inheritance, in inheritance we create an Is-A relationship between classes in which we create a generalised class through generalising common behaviours and attributes of a set of classes, from there each individual class can be further specialised to support their own expected behaviour
+
+- In order for subclasses to have access to the superclass constructor (things are passed in) the keyword super is used , super is a keyword to access the superclass object of the subclass
+
+
+> Take note that though inheritance may seem like a right fit for classes it depends on the question whether it is truly an is-A relationship between classes. For instance a Car and Engine , Student and Course and so on. In these cases composition or aggregation is favoured 
