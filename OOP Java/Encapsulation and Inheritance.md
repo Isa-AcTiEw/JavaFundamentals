@@ -153,6 +153,42 @@ classDiagram
 ``` java 
 package com.example;
 
+class Engine
+{
+    private boolean isRunning;
+    private int horsepower;
+    public Engine(int horsepower)
+    {
+        this.horsepower = horsepower
+        this.isRunning = false
+    };
+
+    public void start()
+    {
+        if(!isRunning)
+        {
+            isRunning = true;
+            System.out.println("Engine started");
+        }
+        else
+        {
+            System.out.println("Engine already started");
+        }
+    };
+
+    public void stop()
+    {
+        if(isRunning)
+        {
+            isRunning = false;
+            System.out.println("Stopping the engine");
+        }
+        else
+        {
+            System.out.println("Cannot stop engine that has not started");
+        }
+    }
+}
 class Vehicle{
     private int speed;
     private Engine engine;
@@ -198,6 +234,25 @@ class Vehicle{
 }
 
 class Car extends Vehicle{
+    private int mileage
+    Car(int s, Engine e, String m, String mo)
+    {
+        super(speed,enginer,make,model)
+    }
+
+    public void accelerate(int s)
+    {
+        speed += s
+        System.out.println("The " + m + " car has accelerated to " + s)
+    }
+
+    public void deccelerate(int s)
+    {
+        speed -= s
+        System.out.println("The " + m + " car has deccelerated to " + s)
+    }
     
 }
+
+
 ```
