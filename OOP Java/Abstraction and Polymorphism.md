@@ -90,18 +90,25 @@ concrete classes to extend its functionalities
 ``` Java
 // In the context of strategy design pattern 
 
-// fly strategy
-interface flyBehaviour(){
-	fly();
-} 
-
+// Conversion Strategy
+interface conversionStrategy {
+	void convert();
+}
 // in the concrete strategies (implement the fly method)
 
-class flyWithWings(){
+class pdfConversionStrategy implements conversionStrategy{
 	@Override 
-
+	void convert(){
+		System.out.println("Converting document to pdf");
+	}
 }
 
+class wordConversionStrategy implements conversionStrategy{
+	@Override 
+	void convert(){
+		System.out.println("Converting document to word");
+	}
+}
 ```
 
  
