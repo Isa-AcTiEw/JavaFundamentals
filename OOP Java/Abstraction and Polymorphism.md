@@ -23,7 +23,6 @@ import java.lang.Math;
 
 abstract class Shape3D(){
 	public double volume;
-	public double abstract findArea();
 	public double abstract findSurfaceArea();
 	public double abstract calculateVolume();
 	@Override 
@@ -34,8 +33,6 @@ abstract class Shape3D(){
 
 class Cube extends Shape3D {
 	private int numSides;
-	private double height;
-	private double breadth;
 	private double length;
 
 	Cube(int l, int h, int b, int numS){
@@ -43,15 +40,11 @@ class Cube extends Shape3D {
 		this.height = h;
 		this.numSides = numS;
 	}
-	@Override 
-	public double findArea(){
-		return Math.pow(length,2) * height;
-	}
 	
 	@Override 
 	public double findSurfaceArea(){
-		double surfaceArea = length * length;
-		return surfaceArea * numSides;
+		double oneSurfaceArea = length * length;
+		return oneSurfaceArea * numSides;
 	}
 
 	@Override 
@@ -61,8 +54,18 @@ class Cube extends Shape3D {
 }
 
 class Cylinder extends Shape3D {
-	private int 
-}
-
+	private double slantHeight;
+	private double radius;
 	
+	@Override 
+	public double findArea(){
+		return 2 * Math.pi * Math.pow(radius,2) + 2 * Math.pi * height;
+	}
+
+	@Override 
+	public double calculateVolume(){
+		return Math.pi * Math.pow(radius,2) * height;
+	}
+
+}
 ```
