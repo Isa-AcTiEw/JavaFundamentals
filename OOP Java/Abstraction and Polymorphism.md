@@ -121,3 +121,7 @@ away the implementation details of convert() method, delegating the implementait
 - Commonality or a uniformed interface , thus reducing complexities during development
 - Closed for modification and open for extensions , through interfaces and abstract classes. Classes can decide pn the behaviour of the same method based on their specific buisness needs 
  
+
+
+# Polymorphism
+- Polymorphism in OOP is a concept where a method or behaviour 
