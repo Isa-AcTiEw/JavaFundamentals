@@ -115,4 +115,9 @@ away the implementation details of convert() method, delegating the implementait
 . This allows for the current code to be easily extended without modifying other classes
 
 > classes would just need to implement the interface and can extend based on their own specific behaviour 
+
+
+# Why should we abstract code
+- Commonality or a uniformed interface , thus reducing complexities during development
+- Closed for modification and open for extensions , through interfaces and abstract classes. Classes can decide pn the behaviour of the same method based on their specific buisness needs 
  
