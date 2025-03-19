@@ -110,5 +110,9 @@ class wordConversionStrategy implements conversionStrategy{
 	}
 }
 ```
+- In this example we used the strategy design pattern to encapsulate what changes, the common interface conversionStrategy is used to abstract
+away the implementation details of convert() method, delegating the implementaiton of the behaviour of the class to the subclasses
+. This allows for the current code to be easily extended without modifying other classes
 
+> classes would just need to implement the interface and can extend based on their own specific behaviour 
  
