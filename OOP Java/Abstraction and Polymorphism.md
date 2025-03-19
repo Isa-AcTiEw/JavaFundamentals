@@ -68,4 +68,12 @@ class Cylinder extends Shape3D {
 	}
 
 }
+
+
 ```
+
+- The class Shape3D is an abstract class, the classes Cylinder and Cube both extend the abstract class Shape3D and hence 
+it inherits all attributes and methods (concrete or abstract). In this case both classes will override the abstract 
+method `calculateVolume` and `calculateArea` based on their mathematical properties and forumulae.
+
+- For a subclass to implement an abstract method the annotation `@Override` is being utilised enabling the sub classes to override and implement the abstracts method defined in the abstract class 
