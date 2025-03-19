@@ -76,4 +76,32 @@ class Cylinder extends Shape3D {
 it inherits all attributes and methods (concrete or abstract). In this case both classes will override the abstract 
 method `calculateVolume` and `calculateArea` based on their mathematical properties and forumulae.
 
-- For a subclass to implement an abstract method the annotation `@Override` is being utilised enabling the sub classes to override and implement the abstracts method defined in the abstract class 
+- For a subclass to implement an abstract method the annotation `@Override` is being 
+utilised enabling the sub classes to override and implement the abstracts method defined in the abstract class 
+
+
+## Interface
+- An interface refers to contract or blueprint that defines a set of methods that a class must implement 
+> Note! : That an interface cannot have any attributes or any concrete methods, it is a pure blueprint for subclasses
+concrete classes to extend its functionalities 
+
+- To define an interface in Java the keyword `interface` is being utilised 
+
+``` Java
+// In the context of strategy design pattern 
+
+// fly strategy
+interface flyBehaviour(){
+	fly();
+} 
+
+// in the concrete strategies (implement the fly method)
+
+class flyWithWings(){
+	@Override 
+
+}
+
+```
+
+ 
